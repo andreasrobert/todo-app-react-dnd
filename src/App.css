@@ -1,4 +1,159 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+body {
+  background-color: hsl(235, 21%, 11%);
+  margin: 0;
+  height: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  color: hsl(233, 14%, 35%);
+  /* align-items: center; */
 }
 
+.header{
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  background-image: url('./images/bg-desktop-dark.jpg');
+  background-position: center;
+  height: 250px;
+  background-size: cover;
+}
+
+#theme{
+  /* z-index: -1; */
+  height: 40px;
+  width: 40px; 
+  margin-top: 50px;
+  margin-left: 500px;
+  cursor: pointer;
+}
+
+h1{
+  margin-top: 60px;
+  margin-right: 420px;
+  position: absolute;
+}
+
+.input{
+  height: 58px;
+  width: 550px;
+  background-color: hsl(235, 24%, 19%);
+  margin-top: 130px;
+  border-radius: 4px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+
+}
+
+.button{
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  border:1px solid hsl(237, 14%, 26%);
+  margin-left: 20px;
+  background-image:url('./images/icon-check.svg'),   linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+
+input{
+  /* position: absolute; */
+  border: none !important;
+  width: 350px;
+  height: 40px;
+  margin-top: 4px;
+  margin-left: 17px;
+  background: transparent;
+  color: hsl(234, 39%, 85%);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size:medium;
+  display:flex;
+  flex-direction: row;
+}
+
+input:focus{
+  outline:none;
+}
+
+::placeholder{
+  color: hsl(234, 11%, 52%)
+}
+
+#cross{
+  position: absolute;
+  margin-left: 505px;
+  /* margin-top: 5px; */
+  cursor: pointer;
+  padding: 5px;
+
+}
+
+.container{
+  width: 550px;
+  height: auto;
+  background-color: hsl(235, 24%, 19%);
+  margin:0 auto;
+  margin-top: -35px;
+  border-radius: 4px;
+  display:flexbox;
+
+  
+}
+
+.post{
+  height: 58px;
+  width: 550px;
+  background-color: hsl(235, 24%, 19%);
+  /* background-color: darkcyan; */
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  /* position: absolute; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  border-bottom: 1px solid hsl(237, 14%, 26%);
+  
+
+  
+
+}
+
+
+.footer{
+  margin-top: 5px;
+  height: 42px;
+  color: hsl(234, 11%, 52%);
+  display:flex;
+  justify-content:flex-end;
+}
+
+p{
+  text-align: center;
+  margin-right: 20px;
+  font-size:small;
+  cursor: pointer;
+}
+
+#completed{
+  margin-right: 80px;
+}
+
+#items{
+  margin-right: 105px;
+}
+
+h4{
+  text-align: center;
+  margin-top: 53px;
+  font-size:smaller;
+}
+
+h3{
+  margin-left: 17px;
+  color: hsl(234, 39%, 85%);
+  font-weight: 400;
+}
