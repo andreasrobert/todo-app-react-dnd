@@ -75,6 +75,7 @@ h1{
   align-items: center;
 }
 
+
 .button-active{
   width: 24px;
   height: 24px;
@@ -163,6 +164,7 @@ input:focus{
   margin-top: -35px;
   border-radius: 4px;
   display:flexbox;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .container.light{
@@ -173,6 +175,7 @@ input:focus{
   margin-top: -35px;
   border-radius: 4px;
   display:flexbox;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .post{
@@ -224,17 +227,12 @@ p:hover:not(#items).light{
   cursor: pointer;
 }
 
-#activebar{
-  font-weight: 700;
-}
-
-#all{
+#activebar, #all, #completedbar{
   font-weight: 700;
 }
 
 #completedbar{
   margin-right: 77px;
-  font-weight: 700;
 }
 
 #items{
@@ -299,6 +297,84 @@ h3#completed.light{
 }
 
 
+@media only screen and (max-width:550px) {
+  .input, .input.light, .container, .container.light, .post, .post.light {
+    width: 360px;
+  }
+
+  input, input.light{
+    width: 300px;
+  }
+
+  #theme{
+    margin-left:300px ;
+  }
+
+  h1{
+    margin-right:0px;
+  }
+
+  p{
+    margin: 14px;
+  }
+
+
+
+  #completedbar{
+    margin-right: 4px;
+  }
+
+  #items{
+    margin-right: 150px;
+  }
+
+  #cross{
+    margin-left: 320px;
+  }
+
+  .foo{
+    display: flex;
+    justify-content: center;
+  }
+
+  .ter{
+    height: 58px;
+    width: 360px;
+    margin-top: 20px; 
+    background-color: hsl(235, 24%, 19%);
+    border-radius: 5px;
+    align-self:flex-end;   
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+
+  .ter.light{
+    background-color: hsl(0, 0%, 98%);
+
+  }
+
+
+  #all,#activebar,#completedbar{
+    position: absolute;
+    margin-top: 88px;
+  }
+
+  #all{
+    margin-right: 235px;
+  }
+
+  #activebar{
+    margin-right: 183px;
+  }
+
+  #completedbar{
+    margin-right: 105px;
+  }
+
+  .button, .button-active, .button-completed{
+    margin-left: 10px;
+  }
+
+}
 
 
 

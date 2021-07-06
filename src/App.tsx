@@ -48,9 +48,6 @@ function App() {
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
     setTodos(items);
-
-    console.log(result)
-    console.log(items)
   }
 
 
@@ -119,6 +116,11 @@ function App() {
           </div>
       </div>
 
+      <div className="foo">
+        <div className={`ter ${theme}`}></div>
+      </div>
+
+    
         <h4>Drag and drop to reorder list</h4>
 
 
