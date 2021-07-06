@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Post, { Todo } from './components/post';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 
 function App() {
@@ -9,8 +9,9 @@ function App() {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([] as Todo[]);
   const [theme, setTheme] = useState("dark")
+  
 
-  if (theme == "light") {
+  if (theme === "light") {
     document.body.style.backgroundColor = "hsl(236, 33%, 92%)";
     document.body.style.color = "hsl(236, 9%, 61%)";
   } else {
@@ -40,8 +41,16 @@ function App() {
   }
 
 
-  const onDragEnd = () => {
+  const handleOnDragEnd = (result: any) => {
+    if (!result.destination) return;
+    
+    const items = Array.from(todos);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    setTodos(items);
 
+    console.log(result)
+    console.log(items)
   }
 
 
@@ -50,7 +59,7 @@ function App() {
     <>
       <div className={`header ${theme}`}>
         <h1>T O D O</h1>
-        <img id="theme" src={theme == "light" ? "/images/icon-moon.svg" : "/images/icon-sun.svg"} alt="" onClick={() => theme === "light" ? setTheme("dark") : setTheme("light")} />
+        <img id="theme" src={theme === "light" ? "/images/icon-moon.svg" : "/images/icon-sun.svg"} alt="" onClick={() => theme === "light" ? setTheme("dark") : setTheme("light")} />
         <div className={`input ${theme}`}>
           <div className="button"></div>
 
@@ -64,7 +73,7 @@ function App() {
 
       <div className={`container ${theme}`}>
 
-        <DragDropContext onDragEnd={onDragEnd}>
+        <DragDropContext onDragEnd={handleOnDragEnd}>
           
           <Droppable droppableId="list">
 
@@ -73,17 +82,14 @@ function App() {
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
-              </div>
-            )}
-          </Droppable>
 
             {todos.filter(todo => {
               if (statusToShow === "all") { return true }
               return todo.status === statusToShow
 
-            }).map(todo => (
+            }).map((todo, index) => (
 
-              <Post theme={theme} todo={todo} key={todo.id} removePost={postId => setTodos(todos.filter(item => item.id !== postId))}
+              <Post index={index} theme={theme} todo={todo} key={todo.id} removePost={postId => setTodos(todos.filter(item => item.id !== postId))}
                 setStatus={(postId, status) => {
                   setTodos(todos.map(item => {
                     if (item.id === postId) { return ({ ...item, status: status }) }
@@ -91,6 +97,15 @@ function App() {
                   }))
                 }} />
             ))}
+            
+
+
+              {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+
+           
             
           
         </DragDropContext>
