@@ -2,27 +2,47 @@
 
 body {
   background-color: hsl(235, 21%, 11%);
-  margin: 0;
-  height: 100%;
   font-family: 'Josefin Sans', sans-serif;
   color: hsl(233, 14%, 35%);
+  margin: 0;
+  height: 100%;
 }
+
+/* body {
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  height: 100%;
+  background-color: hsl(236, 33%, 92%);
+  color:  hsl(236, 9%, 61%);
+ 
+} */
 
 .header{
   color: white;
   font-weight: 700;
-  display: flex;
-  justify-content: center;
   background-image: url('./images/bg-desktop-dark.jpg');
   background-position: center;
-  height: 250px;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  height: 250px;
+}
+
+.header.light{
+  color: white;
+  font-weight: 700;
+  background-image: url('./images/bg-desktop-light.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  height: 250px;
 }
 
 #theme{
-  height: 40px;
-  width: 40px;
-  margin-top: 50px;
+  height: 25px;
+  width: 25px;
+  margin-top: 60px;
   margin-left: 500px;
   cursor: pointer;
 }
@@ -42,7 +62,17 @@ h1{
   position: absolute;
   display: flex;
   align-items: center;
+}
 
+.input.light{
+  height: 58px;
+  width: 550px;
+  background-color:  hsl(0, 0%, 98%);
+  margin-top: 130px;
+  border-radius: 4px;
+  position: absolute;
+  display: flex;
+  align-items: center;
 }
 
 .button-active{
@@ -67,10 +97,6 @@ h1{
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .button{
@@ -89,6 +115,20 @@ input{
   margin-left: 17px;
   background: transparent;
   color: hsl(234, 39%, 85%);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size:medium;
+  display:flex;
+  flex-direction: row;
+}
+
+input.light{
+  border: none !important;
+  width: 350px;
+  height: 40px;
+  margin-top: 4px;
+  margin-left: 17px;
+  background: transparent;
+  color: hsl(235, 19%, 35%);
   font-family: 'Josefin Sans', sans-serif;
   font-size:medium;
   display:flex;
@@ -125,19 +165,38 @@ input:focus{
   display:flexbox;
 }
 
+.container.light{
+  width: 550px;
+  height: auto;
+  background-color: hsl(0, 0%, 98%);
+  margin:0 auto;
+  margin-top: -35px;
+  border-radius: 4px;
+  display:flexbox;
+}
+
 .post{
   height: 58px;
   width: 550px;
   background-color: hsl(235, 24%, 19%);
-  /* background-color: darkcyan; */
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  /* position: absolute; */
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   border-bottom: 1px solid hsl(237, 14%, 26%);
 }
+
+.post.light{
+  height: 58px;
+  width: 550px;
+  background-color: hsl(0, 0%, 98%);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+
 
 .footer{
   margin-top: 5px;
@@ -151,15 +210,31 @@ p{
   text-align: center;
   margin-right: 20px;
   font-size:small;
+  /* font-weight: 700; */
 }
+
 
 p:hover:not(#items){
   color: hsl(236, 33%, 92%) !important;
   cursor: pointer;
 }
 
-#completed{
-  margin-right: 80px;
+p:hover:not(#items).light{
+  color: hsl(237, 14%, 26%) !important;
+  cursor: pointer;
+}
+
+#activebar{
+  font-weight: 700;
+}
+
+#all{
+  font-weight: 700;
+}
+
+#completedbar{
+  margin-right: 77px;
+  font-weight: 700;
 }
 
 #items{
@@ -174,9 +249,20 @@ h4{
 
 h3{
   margin-left: 17px;
+  margin-top: 20px;
   color: hsl(234, 39%, 85%);
   font-weight: 400;
   cursor: pointer;
+  font-size: 16px;
+}
+
+h3.light{
+  margin-left: 17px;
+  margin-top: 20px;
+  color: hsl(235, 19%, 35%);
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 h3#completed{
@@ -184,11 +270,17 @@ h3#completed{
   color:hsl(233, 14%, 35%);
 }
 
+h3#completed.light{
+  text-decoration:line-through;
+  color:hsl(233, 11%, 84%);
+}
+
 .button-active:hover{
+  /* position: absolute; */
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  border:0px solid hsl(237, 14%, 26%);
+  border:0px ;
   background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
@@ -198,4 +290,15 @@ h3#completed{
   border-radius: 50%;
   background-color: hsl(235, 24%, 19%);
 }
+
+.button-active:hover .circle-active.light{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 98%);
+}
+
+
+
+
 
