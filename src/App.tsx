@@ -1,26 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Post, { Todo } from './components/post'
+import Post, { Todo } from './components/post';
+import styled from 'styled-components';
 
+const theme = styled.div`
+
+
+`;
 
 function App() {
-
   const [isLoaded, setIsLoaded] = useState(false);
   const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([
-    // {name: "mickey"},{name: "mickey1"},{name: "mickey2"},{name: "mickey"}
-  ] as Todo[]);
-
+  const [todos, setTodos] = useState([] as Todo[]);
 
   const [statusToShow, setStatusToShow] = useState("all" as 'all' | "active" | 'completed')
-
-  const addTodo = (event: { key: string; }) => {
-    if (event.key === 'enter') {
-      console.log("add a todo")
-    }
-
-  }
-
 
   useEffect(() => {
     if (!isLoaded) {
@@ -30,18 +23,15 @@ function App() {
         const parsedTodos = JSON.parse(todosFromLocalStorage) as Todo[];
         setTodos(parsedTodos);
       }
-
     }
 
     window.localStorage.setItem("todos", JSON.stringify(todos));
 
   }, [todos])
 
-
-  const handleSubmit = (e: React.KeyboardEvent<HTMLInputElement>) =>{
-    setTodos([...todos,{id: `${(new Date()).toISOString()}`,text:e.currentTarget.value, status:"active"}]);
+  const handleSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    setTodos([...todos, { id: `${(new Date()).toISOString()}`, text: e.currentTarget.value, status: "active" }]);
     setInput("");
-
   }
 
   return (
@@ -52,12 +42,6 @@ function App() {
         <div className="input">
           <div className="button"></div>
 
-          {/* <input type="text" value={input} placeholder="Whats your plan for today?"  onKeyDown={(e) => e.key === 'enter' && setTodos(e)}   onChange={(event)=> setInput(event.target.value)}/> */}
-
-          {/* <input type="text" value={input} placeholder="Whats your plan for today?" onKeyDown={(e) => e.key ==='Enter' && console.log((e.target as HTMLInputElement).value)} onChange={(e)=> setInput(e.target.value)} /> */}
-
-          {/* <input type="text" value={input} placeholder="Whats your plan for today?" onKeyDown={(e) => e.key === 'Enter' && setTodos([...todos, e.currentTarget.value])} onChange={(e) => setInput(e.currentTarget.value)} /> */}
-
           <input type="text" value={input} placeholder="Whats your plan for today?" onKeyDown={(e) => e.key === 'Enter' && handleSubmit(e)} onChange={(e) => setInput(e.currentTarget.value)} />
 
         </div>
@@ -67,30 +51,30 @@ function App() {
       </div>
 
       <div className="container">
-        {todos.filter(todo=>{
-          if(statusToShow === "all") {
-            return true
-          } 
+
+
+        {todos.filter(todo => {
+          if (statusToShow === "all") { return true }
           return todo.status === statusToShow
-          
 
         }).map(todo => (
 
-          <Post todo={todo} removePost={(postId) => {
-            console.log(postId);
-            setTodos(todos.filter(item => item.id !== postId))
-          }} key={todo.id} />
+          <Post todo={todo} key={todo.id} removePost={postId => setTodos(todos.filter(item => item.id !== postId))}
+            setStatus={(postId, status) => {
+              setTodos(todos.map(item => {
+                if (item.id === postId) {return ({ ...item, status: status })}
+                return item
+              }))
+            }} />
         ))}
 
 
-
-
         <div className="footer">
-          <p id="items">{ } items left</p>
-          <p onClick={()=>setStatusToShow("all")} >All</p>
-          <p onClick={()=>setStatusToShow("active")} >Active</p>
-          <p id="completed" onClick={()=>setStatusToShow("completed")}>Completed</p>
-          <p>Clear Completed</p>
+          <p id="items">{todos.filter(todo => todo.status === 'active').length} items left</p>
+          <p onClick={() => setStatusToShow("all")} style={{color: statusToShow === 'all' ? 'hsl(220, 98%, 61%)':'hsl(234, 11%, 52%)'}} >All</p>
+          <p onClick={() => setStatusToShow("active")} style={{color: statusToShow === 'active' ? 'hsl(220, 98%, 61%)':'hsl(234, 11%, 52%)'}} >Active</p>
+          <p onClick={() => setStatusToShow("completed")} style={{color: statusToShow === 'completed' ? 'hsl(220, 98%, 61%)':'hsl(234, 11%, 52%)'}} id={"completed"} >Completed</p>
+          <p onClick={() => { setTodos(todos.filter(todo => todo.status !== "completed")) }}>Clear Completed</p>
         </div>
       </div>
 

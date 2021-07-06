@@ -6,7 +6,6 @@ body {
   height: 100%;
   font-family: 'Josefin Sans', sans-serif;
   color: hsl(233, 14%, 35%);
-  /* align-items: center; */
 }
 
 .header{
@@ -21,9 +20,8 @@ body {
 }
 
 #theme{
-  /* z-index: -1; */
   height: 40px;
-  width: 40px; 
+  width: 40px;
   margin-top: 50px;
   margin-left: 500px;
   cursor: pointer;
@@ -47,21 +45,43 @@ h1{
 
 }
 
-.button{
-  width: 27px;
-  height: 27px;
+.button-active{
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   border:1px solid hsl(237, 14%, 26%);
+  margin-left: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-completed{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border:0px solid hsl(237, 14%, 26%);
   margin-left: 20px;
   background-image:url('./images/icon-check.svg'),   linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.button{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border:1px solid hsl(237, 14%, 26%);
+  margin-left: 20px;
+}
 
 input{
-  /* position: absolute; */
   border: none !important;
   width: 350px;
   height: 40px;
@@ -86,10 +106,13 @@ input:focus{
 #cross{
   position: absolute;
   margin-left: 505px;
-  /* margin-top: 5px; */
   cursor: pointer;
   padding: 5px;
+  display: none;
+}
 
+.post:hover #cross{
+  display: block;
 }
 
 .container{
@@ -100,8 +123,6 @@ input:focus{
   margin-top: -35px;
   border-radius: 4px;
   display:flexbox;
-
-  
 }
 
 .post{
@@ -116,12 +137,7 @@ input:focus{
   /* justify-content: center; */
   align-items: center;
   border-bottom: 1px solid hsl(237, 14%, 26%);
-  
-
-  
-
 }
-
 
 .footer{
   margin-top: 5px;
@@ -135,6 +151,10 @@ p{
   text-align: center;
   margin-right: 20px;
   font-size:small;
+}
+
+p:hover:not(#items){
+  color: hsl(236, 33%, 92%) !important;
   cursor: pointer;
 }
 
@@ -156,4 +176,26 @@ h3{
   margin-left: 17px;
   color: hsl(234, 39%, 85%);
   font-weight: 400;
+  cursor: pointer;
 }
+
+h3#completed{
+  text-decoration:line-through;
+  color:hsl(233, 14%, 35%);
+}
+
+.button-active:hover{
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border:0px solid hsl(237, 14%, 26%);
+  background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.button-active:hover .circle-active{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: hsl(235, 24%, 19%);
+}
+
