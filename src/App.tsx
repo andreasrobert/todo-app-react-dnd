@@ -60,7 +60,7 @@ function App() {
         <div className={`input ${theme}`}>
           <div className="button"></div>
 
-          <input type="text" value={input} placeholder="Whats your plan for today?" onKeyDown={(e) => e.key === 'Enter' && handleSubmit(e)} onChange={(e) => setInput(e.currentTarget.value)} className={`${theme}`} />
+          <input type="text" value={input} placeholder="Create a new todo..." onKeyDown={(e) => e.key === 'Enter' && handleSubmit(e)} onChange={(e) => setInput(e.currentTarget.value)} className={`${theme}`} />
 
         </div>
 
