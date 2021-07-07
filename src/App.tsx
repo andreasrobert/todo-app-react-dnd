@@ -33,7 +33,7 @@ function App() {
 
     window.localStorage.setItem("todos", JSON.stringify(todos));
 
-  }, [todos])
+  }, [todos,isLoaded])
 
   const handleSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
     setTodos([...todos, { id: `${(new Date()).toISOString()}`, text: e.currentTarget.value, status: "active" }]);
