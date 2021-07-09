@@ -19,7 +19,10 @@ function Post(props:{index:number, theme:string, todo:Todo, removePost:(postId:s
                         </div>
 
                         <h3 id={todo.status} className={`${props.theme}`}>{todo.text}</h3>
-                        <img id="cross" src="/images/icon-cross.svg" alt="" onClick={(e) => props.removePost(todo.id) } />
+                            <img id="cross" src="/images/icon-cross.svg" alt="" onClick={(e) => {
+                                props.removePost(todo.id);
+                                e.stopPropagation();
+                            }} />
 
                         </div>
                         

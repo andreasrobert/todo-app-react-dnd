@@ -42,9 +42,11 @@ function App() {
 
 
   const handleOnDragEnd = (result: any) => {
-    if (!result.destination) return;
-    
     const items = Array.from(todos);
+    if (!result.destination) {
+      items.splice(result.source.index, 1);
+      return setTodos(items);
+    } 
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
     setTodos(items);

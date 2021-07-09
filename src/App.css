@@ -150,6 +150,7 @@ input:focus{
   cursor: pointer;
   padding: 5px;
   display: none;
+  z-index: 10;
 }
 
 .post:hover #cross{
@@ -187,6 +188,7 @@ input:focus{
   display: flex;
   align-items: center;
   border-bottom: 1px solid hsl(237, 14%, 26%);
+  z-index: 8;
 }
 
 .post.light{
