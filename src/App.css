@@ -1,26 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
 body {
   background-color: hsl(235, 21%, 11%);
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   color: hsl(233, 14%, 35%);
   margin: 0;
   height: 100%;
 }
 
-/* body {
-  font-family: 'Josefin Sans', sans-serif;
-  margin: 0;
-  height: 100%;
-  background-color: hsl(236, 33%, 92%);
-  color:  hsl(236, 9%, 61%);
- 
-} */
-
-.header{
+.header {
   color: white;
   font-weight: 700;
-  background-image: url('./images/bg-desktop-dark.jpg');
+  background-image: url("./images/bg-desktop-dark.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -28,10 +19,10 @@ body {
   height: 250px;
 }
 
-.header.light{
+.header.light {
   color: white;
   font-weight: 700;
-  background-image: url('./images/bg-desktop-light.jpg');
+  background-image: url("./images/bg-desktop-light.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -39,7 +30,7 @@ body {
   height: 250px;
 }
 
-#theme{
+#theme {
   height: 25px;
   width: 25px;
   margin-top: 60px;
@@ -47,13 +38,13 @@ body {
   cursor: pointer;
 }
 
-h1{
+h1 {
   margin-top: 60px;
   margin-right: 420px;
   position: absolute;
 }
 
-.input{
+.input {
   height: 58px;
   width: 550px;
   background-color: hsl(235, 24%, 19%);
@@ -64,10 +55,10 @@ h1{
   align-items: center;
 }
 
-.input.light{
+.input.light {
   height: 58px;
   width: 550px;
-  background-color:  hsl(0, 0%, 98%);
+  background-color: hsl(0, 0%, 98%);
   margin-top: 130px;
   border-radius: 4px;
   position: absolute;
@@ -75,12 +66,11 @@ h1{
   align-items: center;
 }
 
-
-.button-active{
+.button-active {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border:1px solid hsl(237, 14%, 26%);
+  border: 1px solid hsl(237, 14%, 26%);
   margin-left: 20px;
   cursor: pointer;
   display: flex;
@@ -88,27 +78,28 @@ h1{
   justify-content: center;
 }
 
-.button-completed{
+.button-completed {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  border:0px solid hsl(237, 14%, 26%);
+  border: 0px solid hsl(237, 14%, 26%);
   margin-left: 20px;
-  background-image:url('./images/icon-check.svg'),   linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-image: url("./images/icon-check.svg"),
+    linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
 }
 
-.button{
+.button {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border:1px solid hsl(237, 14%, 26%);
+  border: 1px solid hsl(237, 14%, 26%);
   margin-left: 20px;
 }
 
-input{
+input {
   border: none !important;
   width: 350px;
   height: 40px;
@@ -116,13 +107,13 @@ input{
   margin-left: 17px;
   background: transparent;
   color: hsl(234, 39%, 85%);
-  font-family: 'Josefin Sans', sans-serif;
-  font-size:medium;
-  display:flex;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: medium;
+  display: flex;
   flex-direction: row;
 }
 
-input.light{
+input.light {
   border: none !important;
   width: 350px;
   height: 40px;
@@ -130,21 +121,21 @@ input.light{
   margin-left: 17px;
   background: transparent;
   color: hsl(235, 19%, 35%);
-  font-family: 'Josefin Sans', sans-serif;
-  font-size:medium;
-  display:flex;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: medium;
+  display: flex;
   flex-direction: row;
 }
 
-input:focus{
-  outline:none;
+input:focus {
+  outline: none;
 }
 
-::placeholder{
-  color: hsl(234, 11%, 52%)
+::placeholder {
+  color: hsl(234, 11%, 52%);
 }
 
-#cross{
+#cross {
   position: absolute;
   margin-left: 505px;
   cursor: pointer;
@@ -153,33 +144,34 @@ input:focus{
   z-index: 10;
 }
 
-.post:hover #cross{
+.post:hover #cross {
   display: block;
 }
 
-.container{
+.container {
   width: 550px;
   height: auto;
   background-color: hsl(235, 24%, 19%);
-  margin:0 auto;
+  margin: 0 auto;
   margin-top: -35px;
   border-radius: 4px;
-  display:flexbox;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  display: flexbox;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
-.container.light{
+.container.light {
   width: 550px;
   height: auto;
   background-color: hsl(0, 0%, 98%);
-  margin:0 auto;
+  margin: 0 auto;
   margin-top: -35px;
   border-radius: 4px;
-  display:flexbox;
+  display: flexbox;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.post{
+.post {
   height: 58px;
   width: 550px;
   background-color: hsl(235, 24%, 19%);
@@ -191,7 +183,7 @@ input:focus{
   z-index: 8;
 }
 
-.post.light{
+.post.light {
   height: 58px;
   width: 550px;
   background-color: hsl(0, 0%, 98%);
@@ -202,52 +194,52 @@ input:focus{
   border-bottom: 1px solid hsl(233, 11%, 84%);
 }
 
-
-.footer{
+.footer {
   margin-top: 5px;
   height: 42px;
   color: hsl(234, 11%, 52%);
-  display:flex;
-  justify-content:flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
-p{
+p {
   text-align: center;
   margin-right: 20px;
-  font-size:small;
+  font-size: small;
   /* font-weight: 700; */
 }
 
-
-p:hover:not(#items){
+p:hover:not(#items) {
   color: hsl(236, 33%, 92%) !important;
   cursor: pointer;
 }
 
-p:hover:not(#items).light{
+p:hover:not(#items).light {
   color: hsl(237, 14%, 26%) !important;
   cursor: pointer;
 }
 
-#activebar, #all, #completedbar{
+#activebar,
+#all,
+#completedbar {
   font-weight: 700;
 }
 
-#completedbar{
+#completedbar {
   margin-right: 77px;
 }
 
-#items{
+#items {
   margin-right: 105px;
 }
 
-h4{
+h4 {
   text-align: center;
   margin-top: 53px;
-  font-size:smaller;
+  font-size: smaller;
 }
 
-h3{
+h3 {
   margin-left: 17px;
   margin-top: 20px;
   color: hsl(234, 39%, 85%);
@@ -256,7 +248,7 @@ h3{
   font-size: 16px;
 }
 
-h3.light{
+h3.light {
   margin-left: 17px;
   margin-top: 20px;
   color: hsl(235, 19%, 35%);
@@ -265,118 +257,124 @@ h3.light{
   font-size: 16px;
 }
 
-h3#completed{
-  text-decoration:line-through;
-  color:hsl(233, 14%, 35%);
+h3#completed {
+  text-decoration: line-through;
+  color: hsl(233, 14%, 35%);
 }
 
-h3#completed.light{
-  text-decoration:line-through;
-  color:hsl(233, 11%, 84%);
+h3#completed.light {
+  text-decoration: line-through;
+  color: hsl(233, 11%, 84%);
 }
 
-.button-active:hover{
+.button-active:hover {
   /* position: absolute; */
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  border:0px ;
-  background: linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border: 0px;
+  background: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
 }
 
-.button-active:hover .circle-active{
+.button-active:hover .circle-active {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background-color: hsl(235, 24%, 19%);
 }
 
-.button-active:hover .circle-active.light{
+.button-active:hover .circle-active.light {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background-color: hsl(0, 0%, 98%);
 }
 
-
-@media only screen and (max-width:550px) {
-  .input, .input.light, .container, .container.light, .post, .post.light {
+@media only screen and (max-width: 550px) {
+  .input,
+  .input.light,
+  .container,
+  .container.light,
+  .post,
+  .post.light {
     width: 360px;
   }
 
-  input, input.light{
+  input,
+  input.light {
     width: 300px;
   }
 
-  #theme{
-    margin-left:300px ;
+  #theme {
+    margin-left: 300px;
   }
 
-  h1{
-    margin-right:0px;
+  h1 {
+    margin-right: 0px;
   }
 
-  p{
+  p {
     margin: 14px;
   }
 
-
-
-  #completedbar{
+  #completedbar {
     margin-right: 4px;
   }
 
-  #items{
+  #items {
     margin-right: 150px;
   }
 
-  #cross{
+  #cross {
     margin-left: 320px;
   }
 
-  .foo{
+  .foo {
     display: flex;
     justify-content: center;
   }
 
-  .ter{
+  .ter {
     height: 58px;
     width: 360px;
-    margin-top: 20px; 
+    margin-top: 20px;
     background-color: hsl(235, 24%, 19%);
     border-radius: 5px;
-    align-self:flex-end;   
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    align-self: flex-end;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
 
-  .ter.light{
+  .ter.light {
     background-color: hsl(0, 0%, 98%);
-
   }
 
-
-  #all,#activebar,#completedbar{
+  #all,
+  #activebar,
+  #completedbar {
     position: absolute;
     margin-top: 88px;
   }
 
-  #all{
+  #all {
     margin-right: 235px;
   }
 
-  #activebar{
+  #activebar {
     margin-right: 183px;
   }
 
-  #completedbar{
+  #completedbar {
     margin-right: 105px;
   }
 
-  .button, .button-active, .button-completed{
+  .button,
+  .button-active,
+  .button-completed {
     margin-left: 10px;
   }
-
 }
-
-
-
